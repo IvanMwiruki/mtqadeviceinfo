@@ -1,5 +1,12 @@
+/*
+ * Created by Ivan Mwiruki
+ */
+
 package com.ivanmwiruki.mtqaticketinfo;
 
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -28,17 +35,25 @@ public class MainActivity extends AppCompatActivity {
         apiValue = (TextView) findViewById(R.id.apiValue);
 
 
-        //set date and time (using network)
+        //get/set date and time
 
-        //set Seller App build value
-        //buildValue.setText();
-        //set device model value
-        modelValue.setText(android.os.Build.MODEL);
-        //set device ID value
-        //deviceIDValue.setText();
-        //set Android version value
-        //androidVersionValue.setText(System.getProperty("os.version"));
-        //set API level value
-        //apiValue.setText(android.os.Build.VERSION.SDK_INT);
+        //get/set Seller App build value
+        buildValue.setText(getSellerAppBuild());
+        //get/set device model value
+        modelValue.setText(DeviceName.getDeviceName());
+        //get/set device ID value
+        deviceIDValue.setText(Settings.Secure.getString(getContentResolver(), "bluetooth_name"));
+        //get/set Android version value
+        androidVersionValue.setText(android.os.Build.VERSION.RELEASE);
+        //get/set API level value
+        apiValue.setText(android.os.Build.VERSION.SDK);
+    }
+
+    private String getSellerAppBuild() {
+        PackageInfo pinfo = null;
+        try {
+            pinfo = getPackageManager().getPackageInfo("com.amazon.sellermobile.android", 0);
+        } catch (PackageManager.NameNotFoundException e) {}
+        return pinfo.versionName;
     }
 }
