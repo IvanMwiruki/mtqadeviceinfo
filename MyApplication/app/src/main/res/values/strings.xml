@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">MTQA Ticket Info</string>
+    <string name="seller_app_build">Seller App Build</string>
+    <string name="device_model">Device Model</string>
+    <string name="device_id">Device ID</string>
+    <string name="android_version">Android Version</string>
+    <string name="api_level">API Level</string>
 </resources>
