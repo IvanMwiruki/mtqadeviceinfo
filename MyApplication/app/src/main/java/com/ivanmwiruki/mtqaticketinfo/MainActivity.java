@@ -6,10 +6,13 @@ package com.ivanmwiruki.mtqaticketinfo;
 
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.widget.TextView;
+
+import java.util.Date;
+import java.text.DateFormat;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         //get/set date and time
-
+        dateAndTime.setText(DateFormat.getDateTimeInstance().format(new Date()));
         //get/set Seller App build value
         buildValue.setText(getSellerAppBuild());
         //get/set device model value
