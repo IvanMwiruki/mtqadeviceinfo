@@ -8,6 +8,8 @@
     android:weightSum="1">
 
     <TextView
+        android:background="@drawable/border_set"
+        android:gravity="start|center_vertical"
         android:id="@+id/dateAndTime"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -25,6 +27,7 @@
         android:typeface="normal" />
 
     <TextView
+        android:background="@drawable/border_set"
         android:gravity="end"
         android:id="@+id/buildValue"
         android:layout_width="match_parent"
@@ -42,6 +45,7 @@
         android:textStyle="bold" />
 
     <TextView
+        android:background="@drawable/border_set"
         android:gravity="end"
         android:id="@+id/modelValue"
         android:layout_width="match_parent"
@@ -61,6 +65,7 @@
         android:textStyle="bold" />
 
     <TextView
+        android:background="@drawable/border_set"
         android:gravity="end"
         android:id="@+id/deviceIDValue"
         android:layout_width="match_parent"
@@ -78,6 +83,7 @@
         android:textStyle="bold" />
 
     <TextView
+        android:background="@drawable/border_set"
         android:gravity="end"
         android:id="@+id/androidVersionValue"
         android:layout_width="match_parent"
@@ -95,6 +101,7 @@
         android:textStyle="bold" />
 
     <TextView
+        android:background="@drawable/border_set"
         android:gravity="end"
         android:id="@+id/apiValue"
         android:layout_width="match_parent"
@@ -102,4 +109,23 @@
         android:text="TextView"
         android:textAlignment="textEnd"
         android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/wifiNetwork"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/wifi_network"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:background="@drawable/border_set"
+        android:gravity="end"
+        android:id="@+id/wifiNetworkValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textAlignment="textEnd"
+        android:textSize="16sp" />
+
 </LinearLayout>

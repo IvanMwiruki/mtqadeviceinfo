@@ -5,4 +5,5 @@
     <string name="device_id">Device Lab ID</string>
     <string name="android_version">Android Version</string>
     <string name="api_level">API Level</string>
+    <string name="wifi_network">Wifi Network</string>
 </resources>
