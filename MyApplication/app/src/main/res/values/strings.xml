@@ -6,4 +6,5 @@
     <string name="android_version">Android Version</string>
     <string name="api_level">API Level</string>
     <string name="wifi_network">Wifi Network</string>
+    <string name="refresh_button">Refresh</string>
 </resources>

@@ -5,6 +5,7 @@
 package com.ivanmwiruki.mtqaticketinfo;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.NetworkInfo;
@@ -14,6 +15,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.Date;
@@ -30,12 +33,16 @@ public class MainActivity extends AppCompatActivity {
     private TextView apiValue;
     private TextView wifiNetworkValue;
 
+    //define variable for the refresh button
+    private Button refreshButton;
+
+    //start the app
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mtqaticketinfo_main);
 
-        //get references to the textview widgets
+        //get references to the widgets
         dateAndTime = (TextView) findViewById(R.id.dateAndTime);
         buildValue = (TextView) findViewById(R.id.buildValue);
         modelValue = (TextView) findViewById(R.id.modelValue);
@@ -43,7 +50,17 @@ public class MainActivity extends AppCompatActivity {
         androidVersionValue = (TextView) findViewById(R.id.androidVersionValue);
         apiValue = (TextView) findViewById(R.id.apiValue);
         wifiNetworkValue = (TextView) findViewById(R.id.wifiNetworkValue);
+        refreshButton = (Button) findViewById(R.id.refreshButton);
 
+        //set listener for refresh button
+        refreshButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = getIntent();
+                finish();
+                startActivity(intent);
+            }
+        });
 
         //get/set textview widget values
         dateAndTime.setText(DateFormat.getDateTimeInstance().format(new Date()));
