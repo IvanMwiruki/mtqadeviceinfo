@@ -11,13 +11,13 @@ import android.content.pm.PackageManager;
 import android.net.NetworkInfo;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Date;
 import java.text.DateFormat;
@@ -54,11 +54,13 @@ public class MainActivity extends AppCompatActivity {
 
         //set listener for refresh button
         refreshButton.setOnClickListener(new View.OnClickListener() {
+            //restart activity and display toast when button is clicked
             @Override
             public void onClick(View v) {
                 Intent intent = getIntent();
                 finish();
                 startActivity(intent);
+                Toast.makeText(MainActivity.this, "Data refreshed", Toast.LENGTH_SHORT).show();
             }
         });
 
