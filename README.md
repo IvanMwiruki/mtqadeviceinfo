@@ -11,3 +11,5 @@ Not only useful for tickets! This info is also great when you're testing and wan
 <h1 align="center">
 	<img src="media/screenshot.png" alt="mtqa device info">
 </h1>
+
+![forthebadge](https://img.shields.io/badge/Made%20with-%E2%9D%A4-red.svg)
